@@ -1,4 +1,5 @@
-# shoudi
+# Should I?
+Small project in Vue.js that helps you analyse the options and take the best decision.
 
 ## Project setup
 ```
