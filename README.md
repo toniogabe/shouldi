@@ -1,5 +1,6 @@
 # Should I?
-Small project in Vue.js that helps you analyse the options and take the best decision.
+## About
+Should I? is a small project in Vue.js that helps you analyse the options and take the best decision.
 
 ## Project setup
 ```
@@ -14,11 +15,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
 
 ### Customize configuration
