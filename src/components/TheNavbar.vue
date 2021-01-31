@@ -14,7 +14,6 @@
         <b-navbar-nav class="ml-auto">
           <b-nav-item href="#">GitHub</b-nav-item>
         </b-navbar-nav>
-
       </b-collapse>
     </b-navbar>
   </div>
@@ -22,6 +21,12 @@
 
 <script>
 export default {
-  name: "TheNavbar"
+  name: "TheNavbar",
+  methods: {
+    resetData() {
+      console.log('remove');
+      localStorage.removeItem("shouldIData");
+    }
+  }
 };
 </script>
