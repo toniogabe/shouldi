@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" variant="transparent">
       <b-navbar-brand href="#">Should I?</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -12,6 +12,7 @@
 
         <!-- Right Aligned -->
         <b-navbar-nav class="ml-auto">
+          <b-nav-item href="#">About</b-nav-item>
           <b-nav-item href="#">GitHub</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -21,12 +22,6 @@
 
 <script>
 export default {
-  name: "TheNavbar",
-  methods: {
-    resetData() {
-      console.log('remove');
-      localStorage.removeItem("shouldIData");
-    }
-  }
+  name: "TheNavbar"
 };
 </script>

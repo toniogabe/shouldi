@@ -1,11 +1,24 @@
 <template>
   <div>
-    <b-progress :value="56" :max="100" show-progress animated></b-progress>
+    <b-progress
+      :value="value"
+      :max="100"
+      show-progress
+      animated
+      height="2rem"
+    ></b-progress>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ScoreBar"
+  name: "ScoreBar",
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
+
+  }
 };
 </script>
