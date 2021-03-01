@@ -6,7 +6,7 @@
 
       <h1>Should you BUY? Try below!</h1>
 
-      <b-input-group prepend="Question" class="mt-5">
+      <b-input-group prepend="Question" size="lg" class="mt-5">
         <b-form-input v-model="title" placeholder="Untitled"></b-form-input>
       </b-input-group>
 
@@ -14,8 +14,8 @@
 
       <b-row class="mt-3">
 
-        <BaseList title="Cons" :list="cons" @insert="addToList(cons, $event)" />
         <BaseList title="Pros" :list="pros" @insert="addToList(pros, $event)" />
+        <BaseList title="Cons" :list="cons" @insert="addToList(cons, $event)" />
 
       </b-row>
     </b-container>

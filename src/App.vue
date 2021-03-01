@@ -4,8 +4,3 @@
   </div>
 </template>
 
-<style>
-body {
-  background-color: #fcdfdb !important;
-}
-</style>

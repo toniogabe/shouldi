@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" variant="transparent">
+    <b-navbar toggleable="lg" variant="transparent" class="mx-5">
       <b-navbar-brand href="#">Should I?</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

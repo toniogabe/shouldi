@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro|Sintony");
+// @import url("https://fonts.googleapis.com/css?family=Ubuntu|Open+Sans");
+
+// Typography
+$font-family-sans-serif: 'Sintony', sans-serif;
+$headings-font-family: 'Source Sans Pro', sans-serif;
+$headings-font-weight: 900;
+
+// Colors ---------------------------------------------
+
+// Greenery Palette
+$olive: #A3BCB6;
+$green-leaf: #39603D;
+$brown-grey: #3C403D;
+$tanly: #DADED4;
+
+// Variable Overrides ----------------------------------
+
+$body-bg: $tanly;
+$body-color: $brown-grey;
+
+$enable-shadows: true;
+
+// Classes Overrides ------------------------------------
+
+.btn .b-icon.bi {
+  vertical-align: middle !important;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
