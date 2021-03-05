@@ -1,39 +1,71 @@
 <template>
   <b-col>
-    <b-card :title="title">
+    <b-card no-body>
 
-      <b-input-group class="mb-2">
+      <template #header>
+        <h4 class="mb-0"><b-icon icon="list" scale="0.9"></b-icon> {{ title }}</h4>
+      </template>
+
+      <b-input-group class="my-2 px-2">
+
         <b-form-input
           v-model="argument.name"
-          placeholder="New argument"
+          placeholder="Add argument"
           @keyup.enter="addItem()"
         ></b-form-input>
 
-        <b-form-select
-          v-model="argument.weight"
-          :options="options"
-        ></b-form-select>
+        <template #append>
+          <b-dropdown variant="outline-primary" toggle-class="text-decoration-none" no-caret>
 
-        <b-input-group-append>
-          <!-- <b-input-group :append="argument.weight">
-            <b-form-input
-              v-model="argument.weight"
-              type="range"
-              min="1"
-              max="3"
-              number
-            ></b-form-input>
-          </b-input-group> -->
-          <b-button variant="primary" @click="addItem()">
+            <template #button-content>
+              <b-icon v-for="i in argument.weight" :key="i" icon="lightning-fill"></b-icon>
+              <!-- <b-icon icon="lightning-fill"></b-icon> -->
+            </template>
+
+            <b-dropdown-group header="Importance" id="dropdown-header-label">
+
+              <b-dropdown-item-button @click="argument.weight = 1">
+                <b-icon icon="lightning-fill"></b-icon>
+              </b-dropdown-item-button>
+              <b-dropdown-item-button @click="argument.weight = 2">
+                <b-icon v-for="i in 2" :key="i" icon="lightning-fill"></b-icon>
+              </b-dropdown-item-button>
+              <b-dropdown-item-button @click="argument.weight = 3">
+                <b-icon v-for="i in 3" :key="i" icon="lightning-fill"></b-icon>
+              </b-dropdown-item-button>
+
+            </b-dropdown-group>
+          </b-dropdown>
+
+          <b-button variant="primary" @click="addItem()" :disabled="!argument.name">
             <b-icon-plus></b-icon-plus>
           </b-button>
-        </b-input-group-append>
 
+        </template>
       </b-input-group>
 
-      <b-list-group>
-        <b-list-group-item v-for="(item, idx) in list" :key="idx">
+      <b-list-group flush>
+        <b-list-group-item
+          v-for="(item, idx) in list"
+          :key="idx"
+          class="d-flex justify-content-between"
+          button
+          @mouseover="selected = item"
+          @mouseleave="selected = undefined"
+        >
           {{ item.name }}
+          <div>
+            <b-icon v-for="i in item.weight" :key="i" icon="lightning-fill"></b-icon>
+            <!-- <b-icon
+              v-show="item == selected"
+              icon="x"
+              class="ml-3 rounded-circle"
+              scale="1.5"
+              variant="danger"
+              @click="removeItem(idx)"
+            ></b-icon> -->
+          </div>
+          <b-icon icon="trash"></b-icon>
         </b-list-group-item>
       </b-list-group>
 
@@ -53,20 +85,23 @@ export default {
 
   data() {
     return {
+      selected: undefined,
       argument: Object.assign({}, baseArg),
       options: [
-        { text: "Low priority", value: 1 },
-        { html: '<b-icon icon="credit-card" aria-hidden="true"></b-icon>', value: 2 },
-        { text: "Hight priority", value: 3 }
+        { text: "Less important", value: 1 },
+        { html: '<b>Normal</b>', value: 2 },
+        { text: "Very important", value: 3 }
       ]
     };
   },
 
   methods: {
-    addItem() {
+    addItem () {
       this.$emit("insert", this.argument);
       this.argument = Object.assign({}, baseArg);
-    }
+    },
+
+    removeItem (idx) { this.$emit("remove", idx); }
   }
 };
 </script>
