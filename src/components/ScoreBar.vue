@@ -4,8 +4,7 @@
       :value="value"
       :max="100"
       show-progress
-      animated
-      height="2rem"
+      height="3rem"
     ></b-progress>
   </div>
 </template>

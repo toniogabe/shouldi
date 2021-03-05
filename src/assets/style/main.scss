@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro|Sintony");
-// @import url("https://fonts.googleapis.com/css?family=Ubuntu|Open+Sans");
 
 // Typography
 $font-family-sans-serif: 'Sintony', sans-serif;
 $headings-font-family: 'Source Sans Pro', sans-serif;
 $headings-font-weight: 900;
+$display4-weight: 900;
 
 // Colors ---------------------------------------------
 
@@ -19,7 +19,6 @@ $tanly: #DADED4;
 $body-bg: $tanly;
 $body-color: $brown-grey;
 
-$enable-shadows: true;
 
 // Classes Overrides ------------------------------------
 
