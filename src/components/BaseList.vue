@@ -1,10 +1,7 @@
 <template>
   <b-col>
-    <b-card no-body>
 
-      <template #header>
-        <h4 class="mb-0"><b-icon icon="list" scale="0.9"></b-icon> {{ title }}</h4>
-      </template>
+      <h4 class="mb-0"><b-icon icon="list" scale="0.9"></b-icon> {{ title }}</h4>
 
       <b-input-group class="my-2 px-2">
 
@@ -69,7 +66,6 @@
         </b-list-group-item>
       </b-list-group>
 
-    </b-card>
   </b-col>
 </template>
 
