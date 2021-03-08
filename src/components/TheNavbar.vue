@@ -1,7 +1,9 @@
 <template>
   <div>
     <b-navbar toggleable="lg" variant="transparent" class="mx-5">
-      <b-navbar-brand href="#">Should I?</b-navbar-brand>
+      <b-navbar-brand href="#">
+        <strong>SHOULDI?</strong>
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>

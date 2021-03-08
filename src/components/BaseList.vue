@@ -41,7 +41,7 @@
         </template>
       </b-input-group>
 
-      <b-list-group flush>
+      <b-list-group v-if="list.length" flush>
         <b-list-group-item
           v-for="(item, idx) in list"
           :key="idx"
@@ -53,18 +53,20 @@
           {{ item.name }}
           <div>
             <b-icon v-for="i in item.weight" :key="i" icon="lightning-fill"></b-icon>
-            <!-- <b-icon
+            <b-icon
               v-show="item == selected"
               icon="x"
               class="ml-3 rounded-circle"
               scale="1.5"
               variant="danger"
               @click="removeItem(idx)"
-            ></b-icon> -->
+            ></b-icon>
           </div>
-          <b-icon icon="trash"></b-icon>
+          <!-- <b-icon icon="trash"></b-icon> -->
         </b-list-group-item>
       </b-list-group>
+
+      <b-card v-else> No {{ title }} yet!</b-card>
 
   </b-col>
 </template>

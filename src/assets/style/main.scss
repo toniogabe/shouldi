@@ -41,14 +41,22 @@ $input-bg: $color-woodsmoke-black;
 $input-border-color: $color-shark;
 // $input-group-addon-bg: $color-tuatara;
 
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
+
 // Classes Overrides ------------------------------------
 
 .btn .b-icon.bi {
   vertical-align: middle !important;
 }
 
-@import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "node_modules/bootstrap-vue/src/index.scss";
+.progress, .progress-bar {
+  border-radius: 0 2rem 2rem 0 !important;
+}
+
+.progress {
+  background-color: $input-bg;
+}
 
 // App Classes ------------------------------------------
 
