@@ -1,16 +1,20 @@
 <template>
-  <div class="my-5">
+  <div class="my-5 text-center">
 
-    <h4>{{ scoreTitle }}</h4>
+    <h1 class="display-4 my-5 line-breaker">{{ scoreTitle }}</h1>
 
-    <b-row v-show="value != undefined">
+    <b-row align-v="center">
+      <b-col cols="1">
+        <b-icon icon="hand-thumbs-down" scale="1.5" variant="danger"></b-icon>
+      </b-col>
       <b-col class="pr-0">
 
         <b-progress
           :value="100 - value"
           :max="100"
-          height="3rem"
+          :height="height"
           style="transform: rotate(180deg)"
+          variant="danger"
         ></b-progress>
 
       </b-col>
@@ -19,10 +23,14 @@
         <b-progress
           :value="value"
           :max="100"
-          height="3rem"
+          :height="height"
           style
+          variant="success"
         ></b-progress>
 
+      </b-col>
+      <b-col cols="1">
+        <b-icon icon="hand-thumbs-up" scale="1.5" variant="success"></b-icon>
       </b-col>
     </b-row>
   </div>
@@ -35,6 +43,10 @@ export default {
     value: {
       type: Number,
       default: -1
+    },
+    height: {
+      type: String,
+      default: '1rem'
     }
 
   },
@@ -50,7 +62,7 @@ export default {
       if (this.value > 20) return 'It better not.';
       if (this.value >= 5) return "Don't do it.";
 
-      return 'Nothing to work with. Add some pros and cons!';
+      return 'Stuck with a decision? \n Add some pros and cons!';
     }
   }
 };</script>

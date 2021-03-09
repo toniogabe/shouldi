@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" variant="transparent" class="mx-5">
+    <b-navbar id="the-navbar" toggleable="lg" class="mx-5">
       <b-navbar-brand href="#">
         <strong>SHOULDI?</strong>
       </b-navbar-brand>

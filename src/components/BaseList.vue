@@ -1,7 +1,7 @@
 <template>
   <b-col>
 
-      <h4 class="mb-0"><b-icon icon="list" scale="0.9"></b-icon> {{ title }}</h4>
+      <h4 class="mb-0"><b-icon icon="list-ul" scale="0.9"></b-icon> {{ title }}</h4>
 
       <b-input-group class="my-2 px-2">
 
@@ -35,7 +35,7 @@
           </b-dropdown>
 
           <b-button variant="primary" @click="addItem()" :disabled="!argument.name">
-            <b-icon-plus></b-icon-plus>
+            <b-icon icon="plus" scale="1.3"></b-icon>
           </b-button>
 
         </template>
@@ -55,9 +55,9 @@
             <b-icon v-for="i in item.weight" :key="i" icon="lightning-fill"></b-icon>
             <b-icon
               v-show="item == selected"
-              icon="x"
+              icon="x-square"
               class="ml-3 rounded-circle"
-              scale="1.5"
+              scale="1.3"
               variant="danger"
               @click="removeItem(idx)"
             ></b-icon>
