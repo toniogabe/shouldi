@@ -1,7 +1,7 @@
 <template>
   <div class="my-5 text-center">
 
-    <h1 class="display-4 my-5 line-breaker">{{ scoreTitle }}</h1>
+    <h1 class="display-4 my-5 line-break">{{ scoreTitle }}</h1>
 
     <b-row align-v="center">
       <b-col cols="1">

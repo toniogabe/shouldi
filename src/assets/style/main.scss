@@ -93,8 +93,12 @@ $input-border-color: $color-shark;
   }
 }
 
-.line-breaker {
-  white-space: pre-line !important;
+.empty-list {
+  text-align: center;
+  background-color: $color-woodsmoke-black;
+  border: none !important;
 }
 
-
+.line-break {
+  white-space: pre-line !important;
+}

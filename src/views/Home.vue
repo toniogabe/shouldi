@@ -3,26 +3,23 @@
     <TheNavbar />
 
     <b-container class="mt-5">
-      <!-- <h1 class="display-4 text-center">Stuck on a big decision?</h1> -->
-
       <TheScorebar v-model="score" />
-
-      <TheQuestionInput v-model="question"/>
+      <TheQuestionInput v-model="question" />
 
       <b-row>
-        <BaseList
+        <arguments-list
+          v-model="cons"
           title="Negatives"
-          :list="cons"
           @insert="addToList(cons, $event)"
           @remove="removeFromList(cons, $event)"
-        />
+        ></arguments-list>
 
-        <BaseList
+        <arguments-list
+          v-model="pros"
           title="Positives"
-          :list="pros"
           @insert="addToList(pros, $event)"
           @remove="removeFromList(pros, $event)"
-        />
+        ></arguments-list>
       </b-row>
     </b-container>
   </div>
@@ -32,12 +29,12 @@
 import TheNavbar from "@/components/TheNavbar";
 import TheQuestionInput from "@/components/TheQuestionInput";
 import TheScorebar from "@/components/TheScorebar";
-import BaseList from "@/components/BaseList";
+import ArgumentsList from "@/components/ArgumentsList";
 
 export default {
   name: "Home",
   components: {
-    BaseList,
+    ArgumentsList,
     TheQuestionInput,
     TheScorebar,
     TheNavbar
@@ -47,7 +44,7 @@ export default {
     return {
       question: undefined,
       pros: [],
-      cons: [],
+      cons: []
     };
   },
 
@@ -60,20 +57,18 @@ export default {
       let conScore = consWeight + this.cons.length;
 
       return (proScore * 100) / (proScore + conScore);
-    },
+    }
   },
 
   methods: {
-    addToList (array, event) {
+    addToList(array, event) {
       let argument = Object.assign({}, event);
       array.push(argument);
-      // console.log(array, argument);
     },
 
-    removeFromList (array, event) {
-      console.log(event);
+    removeFromList(array, event) {
       array.splice(event, 1);
-    },
-  },
+    }
+  }
 };
 </script>
