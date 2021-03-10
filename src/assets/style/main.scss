@@ -9,17 +9,17 @@ $display4-weight: 900;
 // Colors ---------------------------------------------
 
 //TranMauTriTam Palette
-$color-suva-gray        : #8b898f !default;
-$color-mako             : #505555 !default;
-$color-tuatara          : #3b3b3c !default;
-$color-nero             : #252525 !default;
-$color-shark            : #202020 !default;
-$color-woodsmoke-black: #181818 !default;
-$color-woodsmoke-blacker  : #121212 !default;
-$color-sunset-orange    : #f05e51 !default;
-$color-golden-dream     : #eecc38 !default;
-$color-malachite        : #38da51 !default;
-$color-eletric-violet   : #6600ff !default;
+$color-suva-gray         : #8b898f !default;
+$color-mako              : #505555 !default;
+$color-tuatara           : #3b3b3c !default;
+$color-nero              : #252525 !default;
+$color-shark             : #202020 !default;
+$color-woodsmoke-black   : #181818 !default;
+$color-woodsmoke-blacker : #121212 !default;
+$color-sunset-orange     : #f05e51 !default;
+$color-golden-dream      : #eecc38 !default;
+$color-malachite         : #38da51 !default;
+$color-eletric-violet    : #6600ff !default;
 
 // Variable Overrides ----------------------------------
 
@@ -71,11 +71,17 @@ $input-border-color: $color-shark;
 
 .append-inside {
   * {
-    color: white;
+    color: white !important;
   }
   input {
     border-left: none !important;
+    border-right: none !important;
     padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  small, .small {
+    font-size: 60% !important;
+    opacity: 50%;
   }
   .form-control:focus {
     border-color: $input-border-color;

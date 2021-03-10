@@ -3,8 +3,8 @@
     <b-input-group class="mt-3 mb-1">
       <b-form-input
         v-model="argument.name"
-        placeholder="Add argument"
-        max="50"
+        :placeholder="placeholder"
+        :maxlength="maxlength"
         @keyup.enter="addItem()"
         @focus="focused = true"
         @blur="focused = false"
@@ -65,7 +65,7 @@
       <span>
         <b-icon icon="lightning-fill"></b-icon> = Importance of the argument
       </span>
-      <span>{{ argument.name.length }}/50</span>
+      <span>{{ `${argument.name.length}/${maxlength}` }}</span>
     </b-form-text>
   </div>
 </template>
@@ -75,6 +75,16 @@ const baseArg = { name: "", weight: 2 };
 
 export default {
   name: "ArgumentInput",
+  props: {
+    placeholder: {
+      type: String,
+      default: "Add item"
+    },
+    maxlength: {
+      type: [Number, String],
+      default: 50
+    }
+  },
 
   data() {
     return {
