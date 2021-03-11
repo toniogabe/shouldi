@@ -71,20 +71,13 @@
 </template>
 
 <script>
+import baseInputPropsMixin from "@/mixins/baseInputPropsMixin";
+
 const baseArg = { name: "", weight: 2 };
 
 export default {
   name: "ArgumentInput",
-  props: {
-    placeholder: {
-      type: String,
-      default: "Add item"
-    },
-    maxlength: {
-      type: [Number, String],
-      default: 50
-    }
-  },
+  mixins: [baseInputPropsMixin],
 
   data() {
     return {
